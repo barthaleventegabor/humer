@@ -13,5 +13,5 @@ import { LoginComponent } from "./login/login.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'humer';
+  isLoggedIn = false;
 }
