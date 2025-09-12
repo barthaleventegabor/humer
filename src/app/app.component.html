@@ -1,3 +1,24 @@
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/home">Főoldal</a>
+  </li>    
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/employee">Dolgozók</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/rank">Beosztások</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/project">Projektek</a>
+  </li>   
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/login">Belépés</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/logout">Kilépés</a>
+  </li>  
+</ul>
+
 
 @if(isLoggedIn) {
     <div>Belépve</div>
@@ -8,8 +29,6 @@
 
 
 <div class="container">
-    <h1>Dolgozók</h1>
-    
-    <router-outlet />
+  <router-outlet />
 </div>
 
