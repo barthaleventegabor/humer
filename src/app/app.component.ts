@@ -20,7 +20,7 @@ export class AppComponent {
   }
 
   readLogged() {
-    const a = localStorage.getItem('isLogedIn')
+    const a = localStorage.getItem('isLoggedIn')
     console.log('eredmény: ', a)
     if(a != null) {
       this.isLoggedIn = true
