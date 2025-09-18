@@ -1,8 +1,8 @@
+TODO: jelszómező a frontend oldaon
+TODO: role mező a felhasználótáblában
 TODO: új felhasználó felvétele
 TODO: felhasználó módosítása
 TODO: felhasználó törlése
-TODO: jelszómező a backend és frontend oldaon
-TODO: role mező a felhasználótáblában
 
 TODO: login adatbázisból
 TODO: dolgozók kezelése
