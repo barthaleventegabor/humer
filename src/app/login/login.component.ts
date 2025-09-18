@@ -4,6 +4,7 @@ import {
   FormBuilder 
 } from '@angular/forms';
 import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent {
 
   constructor(
     private builder: FormBuilder,
-    private app: AppComponent 
+    private app: AppComponent,
+    private router: Router 
   ) {}
 
   ngOnInit() {
@@ -35,6 +37,7 @@ export class LoginComponent {
     if(user=='admin' && pass=='admin') {
       console.log('belépés ok...')
       this.app.isLoggedIn = true
+      this.router.navigate(['/employee'])
     }
     event.preventDefault()
   }

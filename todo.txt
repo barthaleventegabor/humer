@@ -1,0 +1,9 @@
+TODO: lap frissítése után nem maradunk belépve
+TODO: kilépés nem működik
+TODO: user komponens admin útvonalon
+		localhost:4200/admin/user
+TODO: felhasználókezelés
+TODO: login adatbázisból
+TODO: dolgozók kezelése
+TODO: beosztások kezelése
+TODO: projektek kezelése
