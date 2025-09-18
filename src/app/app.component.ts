@@ -12,5 +12,20 @@ import { RouterOutlet, RouterLink } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  
   isLoggedIn = false;
+
+  ngOnInit() {
+    this.readLogged();
+  }
+
+  readLogged() {
+    const a = localStorage.getItem('isLogedIn')
+    console.log('eredmény: ', a)
+    if(a != null) {
+      this.isLoggedIn = true
+    }
+    
+  }
+
 }
