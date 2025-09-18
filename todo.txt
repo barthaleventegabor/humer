@@ -1,4 +1,3 @@
-TODO: felhasználók backend-ből
 TODO: felhasználók megjelenítése táblázatban
 TODO: új felhasználó felvétele
 TODO: felhasználó módosítása

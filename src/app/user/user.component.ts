@@ -15,9 +15,11 @@ export class UserComponent {
   constructor(private user: UserService) {}
 
   ngOnInit() {
-    // this.userList = this.user.getUsers();
-    this.user.getUsers().subscribe()
-    console.log(this.userList)
+    this.user.getUsers().subscribe({
+      next: (data: any) => {
+        console.log(data)
+      }
+    })
   }
 
 }
