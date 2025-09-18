@@ -16,8 +16,9 @@ export class UserComponent {
 
   ngOnInit() {
     this.user.getUsers().subscribe({
-      next: (data: any) => {
-        console.log(data)
+      next: (res: any) => {
+        console.log(res.data)
+        this.userList = res.data
       }
     })
   }
