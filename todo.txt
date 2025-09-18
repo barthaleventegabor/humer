@@ -1,6 +1,12 @@
-TODO: felhasználókezelés
+TODO: felhasználók backend-ből
+TODO: felhasználók megjelenítése táblázatban
+TODO: új felhasználó felvétele
+TODO: felhasználó módosítása
+TODO: felhasználó törlése
+
 TODO: login adatbázisból
 TODO: dolgozók kezelése
 TODO: beosztások kezelése
 TODO: projektek kezelése
 TODO: A logout automatikusan navigáljon home-ra
+TODO: Az útvonalak védelme
