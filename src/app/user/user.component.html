@@ -1,11 +1,99 @@
 <h2>Felhasználókezelés</h2>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mb-2" 
+data-bs-toggle="modal" data-bs-target="#addModal">
+  Hozzáad
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" 
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+        Felhasználó felvétele
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <form (submit)="createUser($event)" id="userForm"
+        [formGroup]="userForm">
+            <div>
+                <label for="user" class="form-label">Felhasználónév</label>
+
+                @if(
+                    userForm.get('user')?.hasError('required') &&
+                    userForm.get('user')?.touched
+                    ) {
+                    <div>
+                        Kötelező kitölteni.
+                    </div>
+                }
+                @if(
+                    userForm.get('user')?.hasError('minlength') &&
+                    userForm.get('user')?.touched
+                    ) {
+                    <div>
+                        Minimum 3 karakter
+                    </div>
+                }
+
+                <input type="text" class="form-control" id="user"
+                placeholder="felhasználónév" required
+                formControlName="user">
+            </div>
+            <div>
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email"
+                placeholder="emailcím" required
+                formControlName="email">
+            </div>
+            <div>
+                <label for="pass" class="form-label">Jelszó</label>
+                <input type="password" class="form-control" id="pass"
+                placeholder="jelszó" required
+                formControlName="pass">
+            </div>
+            <div>
+                <label for="passre" class="form-label">Jelszó újra</label>
+                <input type="password" class="form-control" id="passre"
+                placeholder="jelszó" required
+                formControlName="passre">
+            </div>
+            <div>
+                <label for="roleId" class="form-label">Szerep</label>
+                <select id="roleId" class="form-select" 
+                formControlName="roleId">
+                    <option value="normal" selected>Normál</option>
+                    <option value="normal">Admin</option>
+                </select>
+            </div>
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" 
+        data-bs-dismiss="modal">Bezár</button>
+
+        <button type="submit" class="btn btn-primary"
+        
+        form="userForm">Ment</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <table class="table table-striped table-info">
     <thead>
         <tr>
             <th>Id</th>
             <th>Felhasználónév</th>
+            <th>Email</th>
+            <th>Szerep</th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +101,8 @@
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roleId }}</td>
             </tr>
         }
     </tbody>

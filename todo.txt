@@ -1,8 +1,8 @@
-TODO: jelszómező a frontend oldaon
-TODO: role mező a felhasználótáblában
 TODO: új felhasználó felvétele
 TODO: felhasználó módosítása
 TODO: felhasználó törlése
+TODO: jelszóváltoztatás felugró ablakból
+
 
 TODO: login adatbázisból
 TODO: dolgozók kezelése
@@ -10,3 +10,6 @@ TODO: beosztások kezelése
 TODO: projektek kezelése
 TODO: A logout automatikusan navigáljon home-ra
 TODO: Az útvonalak védelme
+TODO: login sikertelen belépésre figyelmeztetés
+TODO: védett komponensek védelme
+TODO: user roleId helyett beosztásnév legyen
