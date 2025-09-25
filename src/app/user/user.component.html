@@ -53,7 +53,9 @@ data-bs-toggle="modal" data-bs-target="#addModal">
             </div>
             <div>
                 <label for="pass" class="form-label">Jelszó</label>
-                <input type="password" class="form-control" id="pass"
+                <input 
+                [type]= 'passwordVisible ? "text" : "password"'
+                class="form-control" id="pass"
                 placeholder="jelszó" required
                 formControlName="pass">
             </div>
@@ -76,6 +78,12 @@ data-bs-toggle="modal" data-bs-target="#addModal">
 
       </div>
       <div class="modal-footer">
+
+        <div class="password">
+            <button class="btn btn-info"
+            (click)="toggolePasswordVisible()">Látható</button>
+        </div>
+
         <button type="button" class="btn btn-secondary" 
         data-bs-dismiss="modal">Bezár</button>
 

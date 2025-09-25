@@ -13,6 +13,7 @@ export class UserComponent {
   
   userForm: any;
   userList:any[] = []
+  passwordVisible = false
 
   constructor(
     private user: UserService,
@@ -23,8 +24,8 @@ export class UserComponent {
     this.userForm = this.builder.group({
       user: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      pass: '',
-      passre: '',
+      pass: ['', Validators.required, Validators.minLength(3)],
+      passre: ['', Validators.required, Validators.minLength(3)],
       roleId: ''
     })
     this.user.getUsers().subscribe({
@@ -43,6 +44,10 @@ export class UserComponent {
     //Küldés REST API végpontra
 
     event.preventDefault();
+  }
+
+  toggolePasswordVisible() {
+    this.passwordVisible = !this.passwordVisible
   }
 
 }
