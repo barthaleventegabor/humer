@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../shared/user.service';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { PasswordGenerateService } from '../shared/password-generate.service';
 
 @Component({
   selector: 'app-user',
@@ -14,18 +15,20 @@ export class UserComponent {
   userForm: any;
   userList:any[] = []
   passwordVisible = false
+  customPassword = true
 
   constructor(
     private user: UserService,
-    private builder: FormBuilder
+    private builder: FormBuilder,
+    private passgen: PasswordGenerateService
   ) {}
 
   ngOnInit() {
     this.userForm = this.builder.group({
       user: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      pass: ['', Validators.required, Validators.minLength(3)],
-      passre: ['', Validators.required, Validators.minLength(3)],
+      pass: ['', [Validators.required, Validators.minLength(3)]],
+      passre: ['', [Validators.required, Validators.minLength(3)]],
       roleId: ''
     })
     this.user.getUsers().subscribe({
@@ -48,6 +51,26 @@ export class UserComponent {
 
   toggolePasswordVisible() {
     this.passwordVisible = !this.passwordVisible
+  }
+
+  generatePassword() {
+    console.log('jelszó generálás...')
+    
+    let pass = ''
+    if(this.customPassword) {
+      console.log('custom--')
+      pass = this.passgen.generateCustomPassword()
+    }else {
+      console.log('simple--')
+      pass = this.passgen.generateSimplePassword()
+    }    
+
+    this.userForm.get('pass')?.setValue(pass)
+    this.userForm.get('passre')?.setValue(pass)
+  }
+
+  toggleCustom() {
+    this.customPassword = !this.customPassword
   }
 
 }
