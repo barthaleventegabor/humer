@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { AuthService } from './shared/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +16,13 @@ export class AppComponent {
   
   isLoggedIn = false;
 
+  constructor(private auth : AuthService){}
+
   ngOnInit() {
     this.readLogged();
+    this.auth.isLoggedIn$.subscribe(isLoggedIn =>{
+      this.isLoggedIn = isLoggedIn
+    })
   }
 
   readLogged() {
