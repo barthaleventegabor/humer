@@ -1,4 +1,4 @@
-TODO: A login-nál a BehaviorSbject bevezetése
+
 TODO: új felhasználó felvétele - REST API-nak küldés
 TODO: felhasználó módosítása
 TODO: felhasználó törlése
